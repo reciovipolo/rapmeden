@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты - Мой Тёмный Сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Фиксированное меню (то же, что и на остальных страницах) -->
+  <header>
+    <div class="logo">МойЛоготип</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" id="nav-home">Главная</a></li>
+        <li><a href="music.html" id="nav-music">Музыка</a></li>
+        <li><a href="contacts.html" id="nav-contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ru" title="Русский">
+        <img src="https://flagcdn.com/24x18/ru.png" alt="RU">
+      </button>
+      <button class="lang-btn" data-lang="tm" title="Türkmençe">
+        <img src="https://flagcdn.com/24x18/tm.png" alt="TM">
+      </button>
+      <button class="lang-btn" data-lang="tr" title="Türkçe">
+        <img src="https://flagcdn.com/24x18/tr.png" alt="TR">
+      </button>
+    </div>
+  </header>
+
+  <!-- Секция с контактной информацией -->
+  <section class="contacts-content" style="padding: 80px 40px 60px; background-color: #1a1a1a; margin-top: 80px;">
+    <h2 id="contacts-page-title" style="font-size: 36px; margin-bottom: 30px; text-align: center;">Контакты</h2>
+    <div class="contact-info" style="max-width: 800px; margin: 0 auto; font-size: 18px;">
+      <p id="contact-address">Адрес: ул. Ленина, д. 1, Москва</p>
+      <p id="contact-email">Email: info@example.com</p>
+      <p id="contact-phone">Телефон: +7 123 456 78 90</p>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div class="contact-form" style="max-width: 800px; margin: 40px auto 20px; padding: 20px; background-color: #222; border-radius: 4px;">
+      <h3 id="form-title" style="font-size: 24px; margin-bottom: 15px;">Обратная связь</h3>
+      <form id="feedback-form">
+        <div style="margin-bottom: 15px;">
+          <label for="name" style="display: block; margin-bottom: 5px;" id="form-name-label">Имя</label>
+          <input type="text" id="name" name="name" style="width: 100%; padding: 8px; border-radius: 4px; border: none;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label for="email" style="display: block; margin-bottom: 5px;" id="form-email-label">Email</label>
+          <input type="email" id="email" name="email" style="width: 100%; padding: 8px; border-radius: 4px; border: none;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label for="message" style="display: block; margin-bottom: 5px;" id="form-message-label">Сообщение</label>
+          <textarea id="message" name="message" rows="4" style="width: 100%; padding: 8px; border-radius: 4px; border: none;"></textarea>
+        </div>
+        <button type="submit" id="form-submit-button" style="background-color: #e50914; border: none; color: #fff; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px;">Отправить</button>
+      </form>
+    </div>
+
+    <!-- Блок социальных сетей -->
+    <div class="social-networks" style="max-width: 800px; margin: 20px auto 0; text-align: center; font-size: 18px;">
+      <p id="social-title" style="margin-bottom: 10px;">Мы в социальных сетях:</p>
+      <div class="social-icons" style="display: flex; justify-content: center; gap: 15px;">
+        <a href="https://facebook.com" target="_blank"><img src="https://via.placeholder.com/30?text=FB" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://via.placeholder.com/30?text=TW" alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img src="https://via.placeholder.com/30?text=IG" alt="Instagram"></a>
+        <a href="https://linkedin.com" target="_blank"><img src="https://via.placeholder.com/30?text=LI" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер (тот же, что и на остальных страницах) -->
+  <footer>
+    <p id="footer-text">&copy; 2025 Мой Сайт. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
