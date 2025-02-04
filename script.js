@@ -6,16 +6,6 @@ const translations = {
       music: "Музыка",
       contacts: "Контакты"
     },
-    hero: {
-      title: "Добро пожаловать",
-      subtitle: "Создай свою легенду вместе с нами",
-      button: "Узнать больше"
-    },
-    content: {
-      title: "О Нас",
-      paragraph1: "Это пример сайта в тёмных оттенках с минималистичным дизайном, вдохновлённым современными тенденциями. Здесь вы можете разместить информацию о себе или вашем проекте.",
-      paragraph2: "Используйте этот шаблон как основу и адаптируйте его под свои потребности, добавляя дополнительные секции, анимации и интерактивные элементы."
-    },
     musicPage: {
       title: "Музыка",
       songs: [
@@ -40,16 +30,6 @@ const translations = {
       home: "Baş sahypa",
       music: "Muzika",
       contacts: "Habarlaşmak"
-    },
-    hero: {
-      title: "Hoş geldiňiz",
-      subtitle: "Biziň bilen öz efsanäňizi dörediň",
-      button: "Has köp bilmek"
-    },
-    content: {
-      title: "Biz Barada",
-      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz ýa-da taslamanyňyz barada maglumat ýerleşdirip bilersiňiz.",
-      paragraph2: "Bu şablony esas edip, goşmaça bölümler, animasiýalar we interaktiw elementler goşup zerurlyklaryňyza laýyklaşdyryň."
     },
     musicPage: {
       title: "Muzika",
@@ -76,16 +56,6 @@ const translations = {
       music: "Müzik",
       contacts: "İletişim"
     },
-    hero: {
-      title: "Hoşgeldiniz",
-      subtitle: "Efsanenizi bizimle yaratın",
-      button: "Daha Fazla Bilgi"
-    },
-    content: {
-      title: "Hakkımızda",
-      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip, koyu tonlarda bir sitenin örneğidir. Burada kendiniz veya projeniz hakkında bilgi yerleştirebilirsiniz.",
-      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza göre uyarlayın."
-    },
     musicPage: {
       title: "Müzik",
       songs: [
@@ -108,7 +78,7 @@ const translations = {
 };
 
 function updateContent(lang) {
-  // Обновляем навигацию (если присутствует)
+  // Обновляем навигацию
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -118,31 +88,10 @@ function updateContent(lang) {
     navContacts.textContent = translations[lang].nav.contacts;
   }
   
-  // Обновляем секцию hero (для главной страницы)
-  const heroTitle = document.getElementById("hero-title");
-  const heroSubtitle = document.getElementById("hero-subtitle");
-  const heroButton = document.getElementById("hero-button");
-  if (heroTitle && heroSubtitle && heroButton) {
-    heroTitle.textContent = translations[lang].hero.title;
-    heroSubtitle.textContent = translations[lang].hero.subtitle;
-    heroButton.textContent = translations[lang].hero.button;
-  }
-  
-  // Обновляем секцию контента (для главной страницы)
-  const contentTitle = document.getElementById("content-title");
-  const contentPara1 = document.getElementById("content-para1");
-  const contentPara2 = document.getElementById("content-para2");
-  if (contentTitle && contentPara1 && contentPara2) {
-    contentTitle.textContent = translations[lang].content.title;
-    contentPara1.textContent = translations[lang].content.paragraph1;
-    contentPara2.textContent = translations[lang].content.paragraph2;
-  }
-  
-  // Обновляем музыкальную страницу (если присутствует)
+  // Обновляем заголовок музыкальной страницы и данные песен
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
-    // Обновляем данные для каждой песни
     for (let i = 1; i <= 10; i++) {
       const songTitleEl = document.getElementById("song-title-" + i);
       const songArtistEl = document.getElementById("song-artist-" + i);
@@ -159,51 +108,6 @@ function updateContent(lang) {
     footerText.innerHTML = translations[lang].footer.text;
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  // Инициализация кастомных аудиоплееров
-  document.querySelectorAll(".custom-audio").forEach(customAudio => {
-    const audioSrc = customAudio.getAttribute("data-src");
-    // Создаём объект Audio, но не добавляем нативные элементы управления
-    const audio = new Audio(audioSrc);
-    // Сохраняем ссылку на объект аудио в элементе
-    customAudio.audio = audio;
-
-    const playButton = customAudio.querySelector(".play-pause");
-    const progressContainer = customAudio.querySelector(".progress-container");
-    const progress = customAudio.querySelector(".progress");
-
-    // Обработчик клика по кнопке Play/Pause
-    playButton.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-        playButton.textContent = "Pause";
-      } else {
-        audio.pause();
-        playButton.textContent = "Play";
-      }
-    });
-
-    // Обновляем прогресс по ходу воспроизведения
-    audio.addEventListener("timeupdate", () => {
-      if (audio.duration) {
-        const percent = (audio.currentTime / audio.duration) * 100;
-        progress.style.width = percent + "%";
-      }
-    });
-
-    // При клике по прогресс-бару вычисляем новую позицию и перематываем аудио
-    progressContainer.addEventListener("click", (e) => {
-      const rect = progressContainer.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const newTime = (offsetX / rect.width) * audio.duration;
-      audio.currentTime = newTime;
-    });
-
-    // Если аудио завершилось, меняем текст кнопки обратно на "Play"
-    audio.addEventListener("ended", () => {
-      playButton.textContent = "Play";
-      progress.style.width = "0%";
-    });
 
 document.addEventListener("DOMContentLoaded", () => {
   // Устанавливаем язык по умолчанию – русский
@@ -215,6 +119,46 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       currentLang = btn.getAttribute("data-lang");
       updateContent(currentLang);
+    });
+  });
+  
+  // Инициализация кастомных аудиоплееров
+  document.querySelectorAll(".custom-audio").forEach(customAudio => {
+    const audioSrc = customAudio.getAttribute("data-src");
+    const audio = new Audio(audioSrc);
+    customAudio.audio = audio;
+    
+    const playButton = customAudio.querySelector(".play-pause");
+    const progressContainer = customAudio.querySelector(".progress-container");
+    const progress = customAudio.querySelector(".progress");
+    
+    playButton.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "Pause";
+      } else {
+        audio.pause();
+        playButton.textContent = "Play";
+      }
+    });
+    
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration) {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + "%";
+      }
+    });
+    
+    progressContainer.addEventListener("click", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const newTime = (offsetX / rect.width) * audio.duration;
+      audio.currentTime = newTime;
+    });
+    
+    audio.addEventListener("ended", () => {
+      playButton.textContent = "Play";
+      progress.style.width = "0%";
     });
   });
 });
