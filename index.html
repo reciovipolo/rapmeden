@@ -4,51 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мой Тёмный Сайт</title>
-  <!-- Подключаем файл стилей -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
+  <!-- Фиксированное меню (header) -->
   <header>
     <div class="logo">МойЛоготип</div>
     <nav>
       <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О Нас</a></li>
-        <li><a href="#">Музыка</a></li>
-        <li><a href="#">Галерея</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li><a href="#" id="nav-home">Главная</a></li>
+        <li><a href="#" id="nav-music">Музыка</a></li>
+        <li><a href="#" id="nav-contacts">Контакты</a></li>
       </ul>
     </nav>
+    <!-- Переключатель языков -->
+    <div class="lang-switcher">
+      <!-- Флаги можно заменить на свои изображения -->
+      <button class="lang-btn" data-lang="ru" title="Русский">
+        <img src="https://flagcdn.com/24x18/ru.png" alt="RU">
+      </button>
+      <button class="lang-btn" data-lang="en" title="English">
+        <img src="https://flagcdn.com/24x18/gb.png" alt="EN">
+      </button>
+      <button class="lang-btn" data-lang="es" title="Español">
+        <img src="https://flagcdn.com/24x18/es.png" alt="ES">
+      </button>
+    </div>
   </header>
 
   <!-- Главный экран (hero section) -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Добро пожаловать</h1>
-      <p>Создай свою легенду вместе с нами</p>
-      <a href="#" class="btn">Узнать больше</a>
+      <h1 id="hero-title">Добро пожаловать</h1>
+      <p id="hero-subtitle">Создай свою легенду вместе с нами</p>
+      <a href="#" class="btn" id="hero-button">Узнать больше</a>
     </div>
   </section>
 
   <!-- Блок с дополнительным контентом -->
   <section class="content">
-    <h2>О Нас</h2>
-    <p>
+    <h2 id="content-title">О Нас</h2>
+    <p id="content-para1">
       Это пример сайта в тёмных оттенках с минималистичным дизайном, вдохновлённым современными тенденциями.
       Здесь вы можете разместить информацию о себе или вашем проекте.
     </p>
-    <p>
+    <p id="content-para2">
       Используйте этот шаблон как основу и адаптируйте его под свои потребности, добавляя дополнительные секции, анимации и интерактивные элементы.
     </p>
   </section>
 
   <!-- Футер -->
   <footer>
-    <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+    <p id="footer-text">&copy; 2025 Мой Сайт. Все права защищены.</p>
   </footer>
 
-  <!-- Подключаем JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
