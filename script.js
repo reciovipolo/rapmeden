@@ -18,6 +18,13 @@ const translations = {
     },
     footer: {
       text: "&copy; 2025 Мой Сайт. Все права защищены."
+    },
+    musicPage: {
+      title: "Музыка",
+      songs: [
+        "Песня 1", "Песня 2", "Песня 3", "Песня 4", "Песня 5",
+        "Песня 6", "Песня 7", "Песня 8", "Песня 9", "Песня 10"
+      ]
     }
   },
   tm: {
@@ -38,6 +45,13 @@ const translations = {
     },
     footer: {
       text: "&copy; 2025 Meniň Saýtym. Ähli hukuklar goralan."
+    },
+    musicPage: {
+      title: "Muzika",
+      songs: [
+        "Aýdym 1", "Aýdym 2", "Aýdym 3", "Aýdym 4", "Aýdym 5",
+        "Aýdym 6", "Aýdym 7", "Aýdym 8", "Aýdym 9", "Aýdym 10"
+      ]
     }
   },
   tr: {
@@ -58,6 +72,13 @@ const translations = {
     },
     footer: {
       text: "&copy; 2025 Benim Sitem. Tüm hakları saklıdır."
+    },
+    musicPage: {
+      title: "Müzik",
+      songs: [
+        "Şarkı 1", "Şarkı 2", "Şarkı 3", "Şarkı 4", "Şarkı 5",
+        "Şarkı 6", "Şarkı 7", "Şarkı 8", "Şarkı 9", "Şarkı 10"
+      ]
     }
   }
 };
@@ -69,30 +90,47 @@ function updateContent(lang) {
   document.getElementById("nav-music").textContent = translations[lang].nav.music;
   document.getElementById("nav-contacts").textContent = translations[lang].nav.contacts;
   
-  // Обновляем hero-секцию
-  document.getElementById("hero-title").textContent = translations[lang].hero.title;
-  document.getElementById("hero-subtitle").textContent = translations[lang].hero.subtitle;
-  document.getElementById("hero-button").textContent = translations[lang].hero.button;
+  // Обновляем секцию hero (если есть)
+  if (document.getElementById("hero-title")) {
+    document.getElementById("hero-title").textContent = translations[lang].hero.title;
+    document.getElementById("hero-subtitle").textContent = translations[lang].hero.subtitle;
+    document.getElementById("hero-button").textContent = translations[lang].hero.button;
+  }
   
-  // Обновляем контент
-  document.getElementById("content-title").textContent = translations[lang].content.title;
-  document.getElementById("content-para1").textContent = translations[lang].content.paragraph1;
-  document.getElementById("content-para2").textContent = translations[lang].content.paragraph2;
+  // Обновляем контент (если есть)
+  if (document.getElementById("content-title")) {
+    document.getElementById("content-title").textContent = translations[lang].content.title;
+    document.getElementById("content-para1").textContent = translations[lang].content.paragraph1;
+    document.getElementById("content-para2").textContent = translations[lang].content.paragraph2;
+  }
+  
+  // Обновляем музыкальную страницу (если есть)
+  if (document.getElementById("music-page-title")) {
+    document.getElementById("music-page-title").textContent = translations[lang].musicPage.title;
+    for (let i = 1; i <= 10; i++) {
+      const songTitle = document.getElementById("song-title-" + i);
+      if (songTitle) {
+        songTitle.textContent = translations[lang].musicPage.songs[i - 1];
+      }
+    }
+  }
   
   // Обновляем футер
-  document.getElementById("footer-text").innerHTML = translations[lang].footer.text;
+  if (document.getElementById("footer-text")) {
+    document.getElementById("footer-text").innerHTML = translations[lang].footer.text;
+  }
 }
 
 // Устанавливаем обработчики событий для переключения языков после загрузки DOM
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // По умолчанию устанавливаем русский язык
-  let currentLang = 'ru';
+  let currentLang = "ru";
   updateContent(currentLang);
   
-  const langButtons = document.querySelectorAll('.lang-btn');
+  const langButtons = document.querySelectorAll(".lang-btn");
   langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = btn.getAttribute('data-lang');
+    btn.addEventListener("click", () => {
+      currentLang = btn.getAttribute("data-lang");
       updateContent(currentLang);
     });
   });
