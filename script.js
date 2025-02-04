@@ -1,4 +1,4 @@
-// Объект с переводами для трёх языков
+// Объект с переводами для русского, туркменского и турецкого языков
 const translations = {
   ru: {
     nav: {
@@ -17,52 +17,52 @@ const translations = {
       paragraph2: "Используйте этот шаблон как основу и адаптируйте его под свои потребности, добавляя дополнительные секции, анимации и интерактивные элементы."
     },
     footer: {
-      text: "© 2025 Мой Сайт. Все права защищены."
+      text: "&copy; 2025 Мой Сайт. Все права защищены."
     }
   },
-  en: {
+  tm: {
     nav: {
-      home: "Home",
-      music: "Music",
-      contacts: "Contact"
+      home: "Baş sahypa",
+      music: "Muzika",
+      contacts: "Habarlaşmak"
     },
     hero: {
-      title: "Welcome",
-      subtitle: "Create your legend with us",
-      button: "Learn More"
+      title: "Hoş geldiňiz",
+      subtitle: "Biziň bilen öz efsanäňizi dörediň",
+      button: "Has köp bilmek"
     },
     content: {
-      title: "About Us",
-      paragraph1: "This is an example of a website in dark tones with a minimalist design inspired by modern trends. Here you can place information about yourself or your project.",
-      paragraph2: "Use this template as a foundation and adapt it to your needs by adding additional sections, animations, and interactive elements."
+      title: "Biz Barada",
+      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz ýa-da taslamanyňyz barada maglumat ýerleşdirip bilersiňiz.",
+      paragraph2: "Bu şablony esas edip, goşmaça bölümler, animasiýalar we interaktiw elementler goşup zerurlyklaryňyza laýyklaşdyryň."
     },
     footer: {
-      text: "© 2025 My Website. All rights reserved."
+      text: "&copy; 2025 Meniň Saýtym. Ähli hukuklar goralan."
     }
   },
-  es: {
+  tr: {
     nav: {
-      home: "Inicio",
-      music: "Música",
-      contacts: "Contacto"
+      home: "Ana Sayfa",
+      music: "Müzik",
+      contacts: "İletişim"
     },
     hero: {
-      title: "Bienvenido",
-      subtitle: "Crea tu leyenda con nosotros",
-      button: "Aprende más"
+      title: "Hoşgeldiniz",
+      subtitle: "Efsanenizi bizimle yaratın",
+      button: "Daha Fazla Bilgi"
     },
     content: {
-      title: "Sobre Nosotros",
-      paragraph1: "Este es un ejemplo de un sitio web en tonos oscuros con un diseño minimalista inspirado en las tendencias modernas. Aquí puedes colocar información sobre ti o tu proyecto.",
-      paragraph2: "Utiliza esta plantilla como base y adáptala a tus necesidades agregando secciones adicionales, animaciones y elementos interactivos."
+      title: "Hakkımızda",
+      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip, koyu tonlarda bir sitenin örneğidir. Burada kendiniz veya projeniz hakkında bilgi yerleştirebilirsiniz.",
+      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza göre uyarlayın."
     },
     footer: {
-      text: "© 2025 Mi Sitio Web. Todos los derechos reservados."
+      text: "&copy; 2025 Benim Sitem. Tüm hakları saklıdır."
     }
   }
 };
 
-// Функция для обновления текста на странице согласно выбранному языку
+// Функция для обновления содержимого страницы согласно выбранному языку
 function updateContent(lang) {
   // Обновляем навигацию
   document.getElementById("nav-home").textContent = translations[lang].nav.home;
@@ -83,9 +83,9 @@ function updateContent(lang) {
   document.getElementById("footer-text").innerHTML = translations[lang].footer.text;
 }
 
-// Устанавливаем обработчики событий для переключения языков
+// Устанавливаем обработчики событий для переключения языков после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
-  // Язык по умолчанию (русский)
+  // По умолчанию устанавливаем русский язык
   let currentLang = 'ru';
   updateContent(currentLang);
   
