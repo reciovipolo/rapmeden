@@ -6,6 +6,16 @@ const translations = {
       music: "Музыка",
       contacts: "Контакты"
     },
+    hero: {
+      title: "Добро пожаловать",
+      subtitle: "Создай свою легенду вместе с нами",
+      button: "Узнать больше"
+    },
+    content: {
+      title: "О Нас",
+      paragraph1: "Это пример сайта в тёмных оттенках с минималистичным дизайном, вдохновлённым современными тенденциями. Здесь вы можете разместить информацию о себе или вашем проекте.",
+      paragraph2: "Используйте этот шаблон как основу и адаптируйте его под свои потребности, добавляя дополнительные секции, анимации и интерактивные элементы."
+    },
     musicPage: {
       title: "Музыка",
       songs: [
@@ -30,6 +40,16 @@ const translations = {
       home: "Baş sahypa",
       music: "Muzika",
       contacts: "Habarlaşmak"
+    },
+    hero: {
+      title: "Hoş geldiňiz",
+      subtitle: "Biziň bilen öz efsanäňizi dörediň",
+      button: "Has köp bilmek"
+    },
+    content: {
+      title: "Biz Barada",
+      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz ýa-da taslamanyňyz barada maglumat ýerleşdirip bilersiňiz.",
+      paragraph2: "Bu şablony esas edip, goşmaça bölümler, animasiýalar we interaktiw elementler goşup zerurlyklaryňyza laýyklaşdyryň."
     },
     musicPage: {
       title: "Muzika",
@@ -56,6 +76,16 @@ const translations = {
       music: "Müzik",
       contacts: "İletişim"
     },
+    hero: {
+      title: "Hoşgeldiniz",
+      subtitle: "Efsanenizi bizimle yaratın",
+      button: "Daha Fazla Bilgi"
+    },
+    content: {
+      title: "Hakkımızda",
+      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip, koyu tonlarda bir sitenin örneğidir. Burada kendiniz veya projeniz hakkında bilgi yerleştirebilirsiniz.",
+      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza göre uyarlayın."
+    },
     musicPage: {
       title: "Müzik",
       songs: [
@@ -78,7 +108,7 @@ const translations = {
 };
 
 function updateContent(lang) {
-  // Обновляем навигацию, если она есть
+  // Обновляем навигацию (если присутствует)
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -88,11 +118,31 @@ function updateContent(lang) {
     navContacts.textContent = translations[lang].nav.contacts;
   }
   
-  // Обновляем музыкальную страницу, если она есть
+  // Обновляем секцию hero (для главной страницы)
+  const heroTitle = document.getElementById("hero-title");
+  const heroSubtitle = document.getElementById("hero-subtitle");
+  const heroButton = document.getElementById("hero-button");
+  if (heroTitle && heroSubtitle && heroButton) {
+    heroTitle.textContent = translations[lang].hero.title;
+    heroSubtitle.textContent = translations[lang].hero.subtitle;
+    heroButton.textContent = translations[lang].hero.button;
+  }
+  
+  // Обновляем секцию контента (для главной страницы)
+  const contentTitle = document.getElementById("content-title");
+  const contentPara1 = document.getElementById("content-para1");
+  const contentPara2 = document.getElementById("content-para2");
+  if (contentTitle && contentPara1 && contentPara2) {
+    contentTitle.textContent = translations[lang].content.title;
+    contentPara1.textContent = translations[lang].content.paragraph1;
+    contentPara2.textContent = translations[lang].content.paragraph2;
+  }
+  
+  // Обновляем музыкальную страницу (если присутствует)
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
-    // Обновляем данные по каждой песне
+    // Обновляем данные для каждой песни
     for (let i = 1; i <= 10; i++) {
       const songTitleEl = document.getElementById("song-title-" + i);
       const songArtistEl = document.getElementById("song-artist-" + i);
