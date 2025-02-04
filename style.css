@@ -68,6 +68,83 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
+/* Секция hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  margin-top: 80px; /* отступ для фиксированного header */
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #e50914;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #c40710;
+}
+
+/* Секция с контентом */
+.content {
+  padding: 60px 40px;
+  background-color: #1a1a1a;
+}
+
+.content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
 /* Секция с музыкой */
 .music-content {
   padding: 80px 40px 60px;
@@ -127,11 +204,6 @@ nav ul li a:hover {
   margin-left: 15px;
 }
 
-/* Стили для аудиоплеера – базовая настройка, можно доработать под дизайн */
-audio {
-  outline: none;
-}
-
 /* Футер */
 footer {
   background-color: #000;
@@ -149,6 +221,14 @@ footer {
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
   }
   
   .music-content {
