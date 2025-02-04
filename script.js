@@ -159,6 +159,51 @@ function updateContent(lang) {
     footerText.innerHTML = translations[lang].footer.text;
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // Инициализация кастомных аудиоплееров
+  document.querySelectorAll(".custom-audio").forEach(customAudio => {
+    const audioSrc = customAudio.getAttribute("data-src");
+    // Создаём объект Audio, но не добавляем нативные элементы управления
+    const audio = new Audio(audioSrc);
+    // Сохраняем ссылку на объект аудио в элементе
+    customAudio.audio = audio;
+
+    const playButton = customAudio.querySelector(".play-pause");
+    const progressContainer = customAudio.querySelector(".progress-container");
+    const progress = customAudio.querySelector(".progress");
+
+    // Обработчик клика по кнопке Play/Pause
+    playButton.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "Pause";
+      } else {
+        audio.pause();
+        playButton.textContent = "Play";
+      }
+    });
+
+    // Обновляем прогресс по ходу воспроизведения
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration) {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + "%";
+      }
+    });
+
+    // При клике по прогресс-бару вычисляем новую позицию и перематываем аудио
+    progressContainer.addEventListener("click", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const newTime = (offsetX / rect.width) * audio.duration;
+      audio.currentTime = newTime;
+    });
+
+    // Если аудио завершилось, меняем текст кнопки обратно на "Play"
+    audio.addEventListener("ended", () => {
+      playButton.textContent = "Play";
+      progress.style.width = "0%";
+    });
 
 document.addEventListener("DOMContentLoaded", () => {
   // Устанавливаем язык по умолчанию – русский
