@@ -6,6 +6,16 @@ const translations = {
       music: "Музыка",
       contacts: "Контакты"
     },
+    hero: {
+      title: "Добро пожаловать",
+      subtitle: "Создай свою легенду вместе с нами",
+      button: "Узнать больше"
+    },
+    content: {
+      title: "О Нас",
+      paragraph1: "Это пример сайта в тёмных оттенках с минималистичным дизайном, вдохновлённым современными тенденциями. Здесь вы можете разместить информацию о себе или вашем проекте.",
+      paragraph2: "Используйте этот шаблон как основу и адаптируйте его под свои потребности, добавляя дополнительные секции, анимации и интерактивные элементы."
+    },
     musicPage: {
       title: "Музыка",
       songs: [
@@ -21,6 +31,18 @@ const translations = {
         { title: "Песня 10", artist: "Исполнитель 10" }
       ]
     },
+    contactsPage: {
+      title: "Контакты",
+      address: "Адрес: ул. Ленина, д. 1, Москва",
+      email: "Email: info@example.com",
+      phone: "Телефон: +7 123 456 78 90",
+      formTitle: "Обратная связь",
+      formName: "Имя",
+      formEmail: "Email",
+      formMessage: "Сообщение",
+      formButton: "Отправить",
+      socialTitle: "Мы в социальных сетях:"
+    },
     footer: {
       text: "&copy; 2025 Мой Сайт. Все права защищены."
     }
@@ -30,6 +52,16 @@ const translations = {
       home: "Baş sahypa",
       music: "Muzika",
       contacts: "Habarlaşmak"
+    },
+    hero: {
+      title: "Hoş geldiňiz",
+      subtitle: "Biziň bilen öz efsanäňizi dörediň",
+      button: "Has köp bilmek"
+    },
+    content: {
+      title: "Biz Barada",
+      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz ýa-da taslamanyňyz barada maglumat ýerleşdirip bilersiňiz.",
+      paragraph2: "Bu şablony esas edip, goşmaça bölümler, animasiýalar we interaktiw elementler goşup zerurlyklaryňyza laýyklaşdyryň."
     },
     musicPage: {
       title: "Muzika",
@@ -46,6 +78,18 @@ const translations = {
         { title: "Aýdym 10", artist: "Çyjgyjy 10" }
       ]
     },
+    contactsPage: {
+      title: "Habarlaşmak",
+      address: "Salgym: Leniniň köçesi, 1-nji jaý, Aşgabat",
+      email: "Email: info@example.com",
+      phone: "Telefon: +993 123 456 78",
+      formTitle: "Yzyna habar",
+      formName: "Ady",
+      formEmail: "Email",
+      formMessage: "Habar",
+      formButton: "Ugrat",
+      socialTitle: "Biz jemgyýetçilik ulgamlarynda:"
+    },
     footer: {
       text: "&copy; 2025 Meniň Saýtym. Ähli hukuklar goralan."
     }
@@ -55,6 +99,16 @@ const translations = {
       home: "Ana Sayfa",
       music: "Müzik",
       contacts: "İletişim"
+    },
+    hero: {
+      title: "Hoşgeldiniz",
+      subtitle: "Efsanenizi bizimle yaratın",
+      button: "Daha Fazla Bilgi"
+    },
+    content: {
+      title: "Hakkımızda",
+      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip, koyu tonlarda bir sitenin örneğidir. Burada kendiniz veya projeniz hakkında bilgi yerleştirebilirsiniz.",
+      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza göre uyarlayın."
     },
     musicPage: {
       title: "Müzik",
@@ -71,6 +125,18 @@ const translations = {
         { title: "Şarkı 10", artist: "Sanatçı 10" }
       ]
     },
+    contactsPage: {
+      title: "İletişim",
+      address: "Adres: Örnek Sok. No:1, İstanbul",
+      email: "Email: info@example.com",
+      phone: "Telefon: +90 212 345 67 89",
+      formTitle: "Geri Bildirim",
+      formName: "İsim",
+      formEmail: "Email",
+      formMessage: "Mesaj",
+      formButton: "Gönder",
+      socialTitle: "Sosyal Medyada Biz:"
+    },
     footer: {
       text: "&copy; 2025 Benim Sitem. Tüm hakları saklıdır."
     }
@@ -78,7 +144,7 @@ const translations = {
 };
 
 function updateContent(lang) {
-  // Обновляем навигацию
+  // Обновляем навигацию (на всех страницах)
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -88,7 +154,26 @@ function updateContent(lang) {
     navContacts.textContent = translations[lang].nav.contacts;
   }
   
-  // Обновляем заголовок музыкальной страницы и данные песен
+  // Обновляем элементы главной страницы (если присутствуют)
+  const heroTitle = document.getElementById("hero-title");
+  const heroSubtitle = document.getElementById("hero-subtitle");
+  const heroButton = document.getElementById("hero-button");
+  if (heroTitle && heroSubtitle && heroButton) {
+    heroTitle.textContent = translations[lang].hero.title;
+    heroSubtitle.textContent = translations[lang].hero.subtitle;
+    heroButton.textContent = translations[lang].hero.button;
+  }
+  
+  const contentTitle = document.getElementById("content-title");
+  const contentPara1 = document.getElementById("content-para1");
+  const contentPara2 = document.getElementById("content-para2");
+  if (contentTitle && contentPara1 && contentPara2) {
+    contentTitle.textContent = translations[lang].content.title;
+    contentPara1.textContent = translations[lang].content.paragraph1;
+    contentPara2.textContent = translations[lang].content.paragraph2;
+  }
+  
+  // Обновляем музыкальную страницу (если присутствует)
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
@@ -102,6 +187,48 @@ function updateContent(lang) {
     }
   }
   
+  // Обновляем страницу контактов (если присутствует)
+  const contactsPageTitle = document.getElementById("contacts-page-title");
+  if (contactsPageTitle) {
+    contactsPageTitle.textContent = translations[lang].contactsPage.title;
+  }
+  const contactAddress = document.getElementById("contact-address");
+  if (contactAddress) {
+    contactAddress.textContent = translations[lang].contactsPage.address;
+  }
+  const contactEmail = document.getElementById("contact-email");
+  if (contactEmail) {
+    contactEmail.textContent = translations[lang].contactsPage.email;
+  }
+  const contactPhone = document.getElementById("contact-phone");
+  if (contactPhone) {
+    contactPhone.textContent = translations[lang].contactsPage.phone;
+  }
+  const formTitle = document.getElementById("form-title");
+  if (formTitle) {
+    formTitle.textContent = translations[lang].contactsPage.formTitle;
+  }
+  const formNameLabel = document.getElementById("form-name-label");
+  if (formNameLabel) {
+    formNameLabel.textContent = translations[lang].contactsPage.formName;
+  }
+  const formEmailLabel = document.getElementById("form-email-label");
+  if (formEmailLabel) {
+    formEmailLabel.textContent = translations[lang].contactsPage.formEmail;
+  }
+  const formMessageLabel = document.getElementById("form-message-label");
+  if (formMessageLabel) {
+    formMessageLabel.textContent = translations[lang].contactsPage.formMessage;
+  }
+  const formSubmitButton = document.getElementById("form-submit-button");
+  if (formSubmitButton) {
+    formSubmitButton.textContent = translations[lang].contactsPage.formButton;
+  }
+  const socialTitle = document.getElementById("social-title");
+  if (socialTitle) {
+    socialTitle.textContent = translations[lang].contactsPage.socialTitle;
+  }
+  
   // Обновляем футер
   const footerText = document.getElementById("footer-text");
   if (footerText) {
@@ -110,7 +237,7 @@ function updateContent(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Устанавливаем язык по умолчанию – русский
+  // Язык по умолчанию – русский
   let currentLang = "ru";
   updateContent(currentLang);
   
@@ -122,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // Инициализация кастомных аудиоплееров
+  // Инициализация кастомных аудиоплееров (на странице music.html)
   document.querySelectorAll(".custom-audio").forEach(customAudio => {
     const audioSrc = customAudio.getAttribute("data-src");
     const audio = new Audio(audioSrc);
