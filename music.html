@@ -37,20 +37,21 @@
     <div class="songs">
       <!-- Каждый блок .song представляет собой строку в таблице песен, похожей на Yandex.Музыку -->
       
-      <!-- Song 1 -->
       <div class="song" id="song-1">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-1">Песня 1</h3>
-          <p id="song-artist-1">Исполнитель 1</p>
-        </div>
-        <div class="song-player">
-          <audio controls>
-            <source src="audio/sample1.mp3" type="audio/mp3">
-            Ваш браузер не поддерживает аудио.
-          </audio>
+  <div class="song-cover">
+    <img src="https://via.placeholder.com/60" alt="Cover">
+  </div>
+  <div class="song-details">
+    <h3 id="song-title-1">Песня 1</h3>
+    <p id="song-artist-1">Исполнитель 1</p>
+  </div>
+  <div class="song-player">
+    <!-- Здесь наш кастомный плеер. Атрибут data-src указывает путь к аудиофайлу -->
+    <div class="custom-audio" data-src="audio/sample1.mp3">
+      <div class="controls">
+        <button class="play-pause">Play</button>
+        <div class="progress-container">
+          <div class="progress"></div>
         </div>
       </div>
       
