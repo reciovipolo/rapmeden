@@ -206,6 +206,49 @@ nav ul li a:hover {
   margin-left: 10px;   /* Уменьшенный отступ между описанием и плеером */
 }
 
+/* Стили кастомного аудиоплеера */
+.custom-audio {
+  width: 100%;
+  background: #333;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-audio .controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.custom-audio .play-pause {
+  background: #e50914;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-audio .progress-container {
+  flex: 1;
+  height: 8px;
+  background: #555;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-audio .progress {
+  background: #e50914;
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
 
 /* Футер */
 footer {
