@@ -12,12 +12,12 @@ body {
   line-height: 1.6;
 }
 
-/* Шапка сайта */
+/* Фиксированное меню */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px;
   background-color: #000;
   position: fixed;
   top: 0;
@@ -26,12 +26,14 @@ header {
   z-index: 1000;
 }
 
-header .logo {
+/* Логотип */
+.logo {
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
+/* Меню */
 nav ul {
   list-style: none;
   display: flex;
@@ -49,15 +51,33 @@ nav ul li a:hover {
   color: #e50914;
 }
 
-/* Главный экран (hero section) */
+/* Переключатель языков */
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.2s;
+}
+
+.lang-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Стили для секции hero */
 .hero {
   position: relative;
   height: 100vh;
   background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-  margin-top: 80px; /* чтобы контент не прятался под фиксированным хедером */
+  margin-top: 80px; /* отступ для фиксированного header */
 }
 
-/* Затемнение для фона */
+/* Затемнение фона в hero */
 .hero::after {
   content: '';
   position: absolute;
@@ -108,7 +128,7 @@ nav ul li a:hover {
   background-color: #c40710;
 }
 
-/* Пример секции с контентом */
+/* Секция с контентом */
 .content {
   padding: 60px 40px;
   background-color: #1a1a1a;
@@ -135,6 +155,7 @@ footer {
   font-size: 14px;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
