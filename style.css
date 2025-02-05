@@ -1,5 +1,5 @@
 /* ================================
-   Общие стили (для всех страниц)
+   Общие стили
 =================================== */
 * {
   margin: 0;
@@ -68,16 +68,16 @@ nav ul li a:hover {
   position: relative;
   height: 100vh;
   background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-  margin-top: 80px; /* отступ для фиксированного header */
+  margin-top: 80px;
 }
 .hero::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
   z-index: 1;
 }
 .hero-content {
@@ -191,7 +191,7 @@ footer {
 }
 .song-player {
   margin-left: 10px;
-  flex: 1; /* растягиваем плеер по ширине */
+  flex: 1;
 }
 
 /* Кастомный аудиоплеер */
@@ -213,7 +213,6 @@ footer {
   border: none;
   cursor: pointer;
   margin-right: 10px;
-  /* Размер иконок задаётся через атрибуты SVG */
 }
 .custom-audio .progress-container {
   flex: 1;
@@ -231,7 +230,7 @@ footer {
   transition: width 0.1s linear;
 }
 
-/* Плавающий виджет (скрыт по умолчанию) */
+/* Плавающий виджет */
 #floating-widget {
   position: fixed;
   bottom: 20px;
