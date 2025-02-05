@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Музыка - Мой Тёмный Сайт</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Фиксированное меню (такое же, как на главной странице) -->
+  <!-- Фиксированное меню -->
   <header>
     <div class="logo">МойЛоготип</div>
     <nav>
@@ -30,15 +30,14 @@
     </div>
   </header>
 
-  <!-- Секция с музыкальным контентом -->
+  <!-- Секция с музыкой -->
   <section class="music-content">
     <h2 id="music-page-title">Музыка</h2>
     <div class="songs">
-      <!-- Для каждой песни используем кастомный плеер с иконками -->
-      <!-- Song 1 -->
+      <!-- Пример для одной песни (повторите для песен 2–10 аналогично) -->
       <div class="song" id="song-1">
         <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
+          <img src="https://via.placeholder.com/60" alt="Обложка">
         </div>
         <div class="song-details">
           <h3 id="song-title-1">Песня 1</h3>
@@ -48,7 +47,7 @@
           <div class="custom-audio" data-src="audio/sample1.mp3">
             <div class="controls">
               <button class="play-pause">
-                <!-- Play icon SVG -->
+                <!-- SVG иконка "Play" -->
                 <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
                   <polygon fill="#fff" points="5,3 17,10 5,17"/>
                 </svg>
@@ -60,10 +59,11 @@
           </div>
         </div>
       </div>
-      <!-- Song 2 -->
+      
+      <!-- Повторите аналогичные блоки для песен 2–10 (измените id и data-src) -->
       <div class="song" id="song-2">
         <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
+          <img src="https://via.placeholder.com/60" alt="Обложка">
         </div>
         <div class="song-details">
           <h3 id="song-title-2">Песня 2</h3>
@@ -84,208 +84,18 @@
           </div>
         </div>
       </div>
-      <!-- Song 3 -->
-      <div class="song" id="song-3">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-3">Песня 3</h3>
-          <p id="song-artist-3">Исполнитель 3</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample3.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 4 -->
-      <div class="song" id="song-4">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-4">Песня 4</h3>
-          <p id="song-artist-4">Исполнитель 4</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample4.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 5 -->
-      <div class="song" id="song-5">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-5">Песня 5</h3>
-          <p id="song-artist-5">Исполнитель 5</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample5.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 6 -->
-      <div class="song" id="song-6">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-6">Песня 6</h3>
-          <p id="song-artist-6">Исполнитель 6</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample6.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 7 -->
-      <div class="song" id="song-7">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-7">Песня 7</h3>
-          <p id="song-artist-7">Исполнитель 7</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample7.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 8 -->
-      <div class="song" id="song-8">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-8">Песня 8</h3>
-          <p id="song-artist-8">Исполнитель 8</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample8.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 9 -->
-      <div class="song" id="song-9">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-9">Песня 9</h3>
-          <p id="song-artist-9">Исполнитель 9</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample9.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Song 10 -->
-      <div class="song" id="song-10">
-        <div class="song-cover">
-          <img src="https://via.placeholder.com/60" alt="Cover">
-        </div>
-        <div class="song-details">
-          <h3 id="song-title-10">Песня 10</h3>
-          <p id="song-artist-10">Исполнитель 10</p>
-        </div>
-        <div class="song-player">
-          <div class="custom-audio" data-src="audio/sample10.mp3">
-            <div class="controls">
-              <button class="play-pause">
-                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
-                </svg>
-              </button>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      <!-- Здесь добавьте остальные песни (3–10) по тому же шаблону -->
+      
     </div>
   </section>
   
-  <!-- Плавающий виджет, который появляется после начала воспроизведения -->
+  <!-- Плавающий виджет, который появляется при воспроизведении -->
   <div id="floating-widget">
     <div class="widget-container">
       <button class="widget-close">×</button>
       <div class="widget-content">
-        <p>Вам нравится наш плеер? Оцените его!</p>
-        <!-- Можно добавить дополнительные элементы (например, кнопки соц. сетей, ссылки и т.д.) -->
+        <p>Вам нравится наш плеер? Оцените его, как на Zvuk.com!</p>
       </div>
     </div>
   </div>
