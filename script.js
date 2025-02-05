@@ -144,7 +144,7 @@ const translations = {
 };
 
 function updateContent(lang) {
-  // Навигация
+  // Обновляем навигацию
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -153,7 +153,7 @@ function updateContent(lang) {
     navMusic.textContent = translations[lang].nav.music;
     navContacts.textContent = translations[lang].nav.contacts;
   }
-  // Hero (если присутствует)
+  // Обновляем hero (если есть)
   const heroTitle = document.getElementById("hero-title");
   const heroSubtitle = document.getElementById("hero-subtitle");
   const heroButton = document.getElementById("hero-button");
@@ -162,7 +162,7 @@ function updateContent(lang) {
     heroSubtitle.textContent = translations[lang].hero.subtitle;
     heroButton.textContent = translations[lang].hero.button;
   }
-  // Content (если присутствует)
+  // Обновляем content (если есть)
   const contentTitle = document.getElementById("content-title");
   const contentPara1 = document.getElementById("content-para1");
   const contentPara2 = document.getElementById("content-para2");
@@ -171,7 +171,7 @@ function updateContent(lang) {
     contentPara1.textContent = translations[lang].content.paragraph1;
     contentPara2.textContent = translations[lang].content.paragraph2;
   }
-  // Музыкальная страница
+  // Обновляем музыкальную страницу (если есть)
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
@@ -184,7 +184,7 @@ function updateContent(lang) {
       }
     }
   }
-  // Страница контактов
+  // Обновляем страницу контактов (если есть)
   const contactsPageTitle = document.getElementById("contacts-page-title");
   if (contactsPageTitle) {
     contactsPageTitle.textContent = translations[lang].contactsPage.title;
@@ -207,13 +207,13 @@ function updateContent(lang) {
   if (formSubmitButton) { formSubmitButton.textContent = translations[lang].contactsPage.formButton; }
   const socialTitle = document.getElementById("social-title");
   if (socialTitle) { socialTitle.textContent = translations[lang].contactsPage.socialTitle; }
-  // Footer
+  // Обновляем футер
   const footerText = document.getElementById("footer-text");
   if (footerText) { footerText.innerHTML = translations[lang].footer.text; }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Устанавливаем язык по умолчанию – русский
+  // Язык по умолчанию – русский
   let currentLang = "ru";
   updateContent(currentLang);
   
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // SVG иконки для плеера
+  // SVG-иконки для плеера
   const playIconSVG = `<svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
     <polygon fill="#fff" points="5,3 17,10 5,17"/>
   </svg>`;
