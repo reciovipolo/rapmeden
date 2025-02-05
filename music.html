@@ -34,7 +34,9 @@
   <section class="music-content">
     <h2 id="music-page-title">Музыка</h2>
     <div class="songs">
-      <!-- Пример для одной песни (повторите для песен 2–10 аналогично) -->
+      <!-- Повторите блоки для 10 песен -->
+      
+      <!-- Song 1 -->
       <div class="song" id="song-1">
         <div class="song-cover">
           <img src="https://via.placeholder.com/60" alt="Обложка">
@@ -47,7 +49,7 @@
           <div class="custom-audio" data-src="audio/sample1.mp3">
             <div class="controls">
               <button class="play-pause">
-                <!-- SVG иконка "Play" -->
+                <!-- Play icon SVG -->
                 <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
                   <polygon fill="#fff" points="5,3 17,10 5,17"/>
                 </svg>
@@ -60,7 +62,7 @@
         </div>
       </div>
       
-      <!-- Повторите аналогичные блоки для песен 2–10 (измените id и data-src) -->
+      <!-- Song 2 -->
       <div class="song" id="song-2">
         <div class="song-cover">
           <img src="https://via.placeholder.com/60" alt="Обложка">
@@ -85,26 +87,23 @@
         </div>
       </div>
       
-      <!-- Здесь добавьте остальные песни (3–10) по тому же шаблону -->
-      
-    </div>
-  </section>
-  
-  <!-- Плавающий виджет, который появляется при воспроизведении -->
-  <div id="floating-widget">
-    <div class="widget-container">
-      <button class="widget-close">×</button>
-      <div class="widget-content">
-        <p>Вам нравится наш плеер? Оцените его, как на Zvuk.com!</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Футер -->
-  <footer>
-    <p id="footer-text">&copy; 2025 Мой Сайт. Все права защищены.</p>
-  </footer>
-  
-  <script src="script.js"></script>
-</body>
-</html>
+      <!-- Song 3 -->
+      <div class="song" id="song-3">
+        <div class="song-cover">
+          <img src="https://via.placeholder.com/60" alt="Обложка">
+        </div>
+        <div class="song-details">
+          <h3 id="song-title-3">Песня 3</h3>
+          <p id="song-artist-3">Исполнитель 3</p>
+        </div>
+        <div class="song-player">
+          <div class="custom-audio" data-src="audio/sample3.mp3">
+            <div class="controls">
+              <button class="play-pause">
+                <svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
+                  <polygon fill="#fff" points="5,3 17,10 5,17"/>
+                </svg>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
