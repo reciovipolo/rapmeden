@@ -1,4 +1,4 @@
-// Объект переводов для русского, туркменского и турецкого языков
+// Объект с переводами для русского, туркменского и турецкого языков
 const translations = {
   ru: {
     nav: {
@@ -55,13 +55,13 @@ const translations = {
     },
     hero: {
       title: "Hoş geldiňiz",
-      subtitle: "Öz efsanäňizi biziň bilen dörediň",
+      subtitle: "Biziň bilen öz efsanäňizi dörediň",
       button: "Has köp bilmek"
     },
     content: {
       title: "Biz Barada",
-      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz barada maglumat berip bilersiňiz.",
-      paragraph2: "Şablony esasy hökmünde ulanyp, goşmaça bölümleri, animasiýalary we interaktiw elementleri goşup zerurlyklaryňyza laýyklaşdyryň."
+      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz ýa-da taslamanyňyz barada maglumat ýerleşdirip bilersiňiz.",
+      paragraph2: "Bu şablony esas edip, goşmaça bölümler, animasiýalar we interaktiw elementler goşup zerurlyklaryňyza laýyklaşdyryň."
     },
     musicPage: {
       title: "Muzika",
@@ -107,8 +107,8 @@ const translations = {
     },
     content: {
       title: "Hakkımızda",
-      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip koyu tonlarda bir sitenin örneğidir. Burada kendiniz hakkında bilgi verebilirsiniz.",
-      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza uygun hale getirin."
+      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip, koyu tonlarda bir sitenin örneğidir. Burada kendiniz veya projeniz hakkında bilgi yerleştirebilirsiniz.",
+      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza göre uyarlayın."
     },
     musicPage: {
       title: "Müzik",
@@ -144,7 +144,7 @@ const translations = {
 };
 
 function updateContent(lang) {
-  // Обновляем навигацию
+  // Обновляем навигацию (на всех страницах)
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -153,7 +153,8 @@ function updateContent(lang) {
     navMusic.textContent = translations[lang].nav.music;
     navContacts.textContent = translations[lang].nav.contacts;
   }
-  // Обновляем hero (если есть)
+  
+  // Обновляем элементы главной страницы (если присутствуют)
   const heroTitle = document.getElementById("hero-title");
   const heroSubtitle = document.getElementById("hero-subtitle");
   const heroButton = document.getElementById("hero-button");
@@ -162,7 +163,7 @@ function updateContent(lang) {
     heroSubtitle.textContent = translations[lang].hero.subtitle;
     heroButton.textContent = translations[lang].hero.button;
   }
-  // Обновляем content (если есть)
+  
   const contentTitle = document.getElementById("content-title");
   const contentPara1 = document.getElementById("content-para1");
   const contentPara2 = document.getElementById("content-para2");
@@ -171,7 +172,8 @@ function updateContent(lang) {
     contentPara1.textContent = translations[lang].content.paragraph1;
     contentPara2.textContent = translations[lang].content.paragraph2;
   }
-  // Обновляем музыкальную страницу (если есть)
+  
+  // Обновляем музыкальную страницу (если присутствует)
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
@@ -184,32 +186,54 @@ function updateContent(lang) {
       }
     }
   }
-  // Обновляем страницу контактов (если есть)
+  
+  // Обновляем страницу контактов (если присутствует)
   const contactsPageTitle = document.getElementById("contacts-page-title");
   if (contactsPageTitle) {
     contactsPageTitle.textContent = translations[lang].contactsPage.title;
   }
   const contactAddress = document.getElementById("contact-address");
-  if (contactAddress) { contactAddress.textContent = translations[lang].contactsPage.address; }
+  if (contactAddress) {
+    contactAddress.textContent = translations[lang].contactsPage.address;
+  }
   const contactEmail = document.getElementById("contact-email");
-  if (contactEmail) { contactEmail.textContent = translations[lang].contactsPage.email; }
+  if (contactEmail) {
+    contactEmail.textContent = translations[lang].contactsPage.email;
+  }
   const contactPhone = document.getElementById("contact-phone");
-  if (contactPhone) { contactPhone.textContent = translations[lang].contactsPage.phone; }
+  if (contactPhone) {
+    contactPhone.textContent = translations[lang].contactsPage.phone;
+  }
   const formTitle = document.getElementById("form-title");
-  if (formTitle) { formTitle.textContent = translations[lang].contactsPage.formTitle; }
+  if (formTitle) {
+    formTitle.textContent = translations[lang].contactsPage.formTitle;
+  }
   const formNameLabel = document.getElementById("form-name-label");
-  if (formNameLabel) { formNameLabel.textContent = translations[lang].contactsPage.formName; }
+  if (formNameLabel) {
+    formNameLabel.textContent = translations[lang].contactsPage.formName;
+  }
   const formEmailLabel = document.getElementById("form-email-label");
-  if (formEmailLabel) { formEmailLabel.textContent = translations[lang].contactsPage.formEmail; }
+  if (formEmailLabel) {
+    formEmailLabel.textContent = translations[lang].contactsPage.formEmail;
+  }
   const formMessageLabel = document.getElementById("form-message-label");
-  if (formMessageLabel) { formMessageLabel.textContent = translations[lang].contactsPage.formMessage; }
+  if (formMessageLabel) {
+    formMessageLabel.textContent = translations[lang].contactsPage.formMessage;
+  }
   const formSubmitButton = document.getElementById("form-submit-button");
-  if (formSubmitButton) { formSubmitButton.textContent = translations[lang].contactsPage.formButton; }
+  if (formSubmitButton) {
+    formSubmitButton.textContent = translations[lang].contactsPage.formButton;
+  }
   const socialTitle = document.getElementById("social-title");
-  if (socialTitle) { socialTitle.textContent = translations[lang].contactsPage.socialTitle; }
+  if (socialTitle) {
+    socialTitle.textContent = translations[lang].contactsPage.socialTitle;
+  }
+  
   // Обновляем футер
   const footerText = document.getElementById("footer-text");
-  if (footerText) { footerText.innerHTML = translations[lang].footer.text; }
+  if (footerText) {
+    footerText.innerHTML = translations[lang].footer.text;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -217,23 +241,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentLang = "ru";
   updateContent(currentLang);
   
-  document.querySelectorAll(".lang-btn").forEach(btn => {
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       currentLang = btn.getAttribute("data-lang");
       updateContent(currentLang);
     });
   });
   
-  // SVG-иконки для плеера
-  const playIconSVG = `<svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
-    <polygon fill="#fff" points="5,3 17,10 5,17"/>
-  </svg>`;
-  const pauseIconSVG = `<svg class="icon pause-icon" width="20" height="20" viewBox="0 0 20 20">
-    <rect x="4" y="3" width="4" height="14" fill="#fff"/>
-    <rect x="12" y="3" width="4" height="14" fill="#fff"/>
-  </svg>`;
-  
-  // Инициализация кастомных аудиоплееров (только на странице music.html)
+  // Инициализация кастомных аудиоплееров (на странице music.html)
   document.querySelectorAll(".custom-audio").forEach(customAudio => {
     const audioSrc = customAudio.getAttribute("data-src");
     const audio = new Audio(audioSrc);
@@ -246,11 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
     playButton.addEventListener("click", () => {
       if (audio.paused) {
         audio.play();
-        playButton.innerHTML = pauseIconSVG;
-        showFloatingWidget(); // Показываем виджет при воспроизведении
+        playButton.textContent = "Pause";
       } else {
         audio.pause();
-        playButton.innerHTML = playIconSVG;
+        playButton.textContent = "Play";
       }
     });
     
@@ -269,25 +284,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     audio.addEventListener("ended", () => {
-      playButton.innerHTML = playIconSVG;
+      playButton.textContent = "Play";
       progress.style.width = "0%";
     });
   });
-  
-  // Функциональность плавающего виджета
-  const floatingWidget = document.getElementById("floating-widget");
-  function showFloatingWidget() {
-    if (floatingWidget && floatingWidget.style.display === "none") {
-      floatingWidget.style.display = "block";
-    }
-  }
-  
-  const widgetClose = document.querySelector("#floating-widget .widget-close");
-  if (widgetClose) {
-    widgetClose.addEventListener("click", () => {
-      if (floatingWidget) {
-        floatingWidget.style.display = "none";
-      }
-    });
-  }
 });
