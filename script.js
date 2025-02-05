@@ -1,8 +1,16 @@
-// Объект переводов (для brevity для tm и tr можно добавить аналогично)
+// Объект переводов для русского, туркменского и турецкого языков
 const translations = {
   ru: {
-    nav: { home: "Главная", music: "Музыка", contacts: "Контакты" },
-    hero: { title: "Добро пожаловать", subtitle: "Создай свою легенду вместе с нами", button: "Узнать больше" },
+    nav: {
+      home: "Главная",
+      music: "Музыка",
+      contacts: "Контакты"
+    },
+    hero: {
+      title: "Добро пожаловать",
+      subtitle: "Создай свою легенду вместе с нами",
+      button: "Узнать больше"
+    },
     content: {
       title: "О Нас",
       paragraph1: "Это пример сайта в тёмных оттенках с минималистичным дизайном, вдохновлённым современными тенденциями. Здесь вы можете разместить информацию о себе или вашем проекте.",
@@ -35,18 +43,108 @@ const translations = {
       formButton: "Отправить",
       socialTitle: "Мы в социальных сетях:"
     },
-    footer: { text: "&copy; 2025 Мой Сайт. Все права защищены." }
+    footer: {
+      text: "&copy; 2025 Мой Сайт. Все права защищены."
+    }
   },
   tm: {
-    // Добавьте переводы для туркменского языка по аналогии
+    nav: {
+      home: "Baş sahypa",
+      music: "Muzika",
+      contacts: "Habarlaşmak"
+    },
+    hero: {
+      title: "Hoş geldiňiz",
+      subtitle: "Öz efsanäňizi biziň bilen dörediň",
+      button: "Has köp bilmek"
+    },
+    content: {
+      title: "Biz Barada",
+      paragraph1: "Bu, gara reňklerde minimalist dizaýnly saýtyň nusgasydyr we häzirki zaman tekliplerinden ylham alýar. Bu ýerde özüňiz barada maglumat berip bilersiňiz.",
+      paragraph2: "Şablony esasy hökmünde ulanyp, goşmaça bölümleri, animasiýalary we interaktiw elementleri goşup zerurlyklaryňyza laýyklaşdyryň."
+    },
+    musicPage: {
+      title: "Muzika",
+      songs: [
+        { title: "Aýdym 1", artist: "Çyjgyjy 1" },
+        { title: "Aýdym 2", artist: "Çyjgyjy 2" },
+        { title: "Aýdym 3", artist: "Çyjgyjy 3" },
+        { title: "Aýdym 4", artist: "Çyjgyjy 4" },
+        { title: "Aýdym 5", artist: "Çyjgyjy 5" },
+        { title: "Aýdym 6", artist: "Çyjgyjy 6" },
+        { title: "Aýdym 7", artist: "Çyjgyjy 7" },
+        { title: "Aýdym 8", artist: "Çyjgyjy 8" },
+        { title: "Aýdym 9", artist: "Çyjgyjy 9" },
+        { title: "Aýdym 10", artist: "Çyjgyjy 10" }
+      ]
+    },
+    contactsPage: {
+      title: "Habarlaşmak",
+      address: "Salgym: Leniniň köçesi, 1-nji jaý, Aşgabat",
+      email: "Email: info@example.com",
+      phone: "Telefon: +993 123 456 78",
+      formTitle: "Yzyna habar",
+      formName: "Ady",
+      formEmail: "Email",
+      formMessage: "Habar",
+      formButton: "Ugrat",
+      socialTitle: "Biz jemgyýetçilik ulgamlarynda:"
+    },
+    footer: {
+      text: "&copy; 2025 Meniň Saýtym. Ähli hukuklar goralan."
+    }
   },
   tr: {
-    // Добавьте переводы для турецкого языка по аналогии
+    nav: {
+      home: "Ana Sayfa",
+      music: "Müzik",
+      contacts: "İletişim"
+    },
+    hero: {
+      title: "Hoşgeldiniz",
+      subtitle: "Efsanenizi bizimle yaratın",
+      button: "Daha Fazla Bilgi"
+    },
+    content: {
+      title: "Hakkımızda",
+      paragraph1: "Bu, modern trendlerden ilham alan minimalist tasarıma sahip koyu tonlarda bir sitenin örneğidir. Burada kendiniz hakkında bilgi verebilirsiniz.",
+      paragraph2: "Bu şablonu temel alarak, ek bölümler, animasyonlar ve interaktif öğeler ekleyerek ihtiyaçlarınıza uygun hale getirin."
+    },
+    musicPage: {
+      title: "Müzik",
+      songs: [
+        { title: "Şarkı 1", artist: "Sanatçı 1" },
+        { title: "Şarkı 2", artist: "Sanatçı 2" },
+        { title: "Şarkı 3", artist: "Sanatçı 3" },
+        { title: "Şarkı 4", artist: "Sanatçı 4" },
+        { title: "Şarkı 5", artist: "Sanatçı 5" },
+        { title: "Şarkı 6", artist: "Sanatçı 6" },
+        { title: "Şarkı 7", artist: "Sanatçı 7" },
+        { title: "Şarkı 8", artist: "Sanatçı 8" },
+        { title: "Şarkı 9", artist: "Sanatçı 9" },
+        { title: "Şarkı 10", artist: "Sanatçı 10" }
+      ]
+    },
+    contactsPage: {
+      title: "İletişim",
+      address: "Adres: Örnek Sok. No:1, İstanbul",
+      email: "Email: info@example.com",
+      phone: "Telefon: +90 212 345 67 89",
+      formTitle: "Geri Bildirim",
+      formName: "İsim",
+      formEmail: "Email",
+      formMessage: "Mesaj",
+      formButton: "Gönder",
+      socialTitle: "Sosyal Medyada Biz:"
+    },
+    footer: {
+      text: "&copy; 2025 Benim Sitem. Tüm hakları saklıdır."
+    }
   }
 };
 
 function updateContent(lang) {
-  // Обновляем навигацию
+  // Навигация
   const navHome = document.getElementById("nav-home");
   const navMusic = document.getElementById("nav-music");
   const navContacts = document.getElementById("nav-contacts");
@@ -55,7 +153,7 @@ function updateContent(lang) {
     navMusic.textContent = translations[lang].nav.music;
     navContacts.textContent = translations[lang].nav.contacts;
   }
-  // Обновляем hero (если есть)
+  // Hero (если присутствует)
   const heroTitle = document.getElementById("hero-title");
   const heroSubtitle = document.getElementById("hero-subtitle");
   const heroButton = document.getElementById("hero-button");
@@ -64,7 +162,7 @@ function updateContent(lang) {
     heroSubtitle.textContent = translations[lang].hero.subtitle;
     heroButton.textContent = translations[lang].hero.button;
   }
-  // Обновляем content (если есть)
+  // Content (если присутствует)
   const contentTitle = document.getElementById("content-title");
   const contentPara1 = document.getElementById("content-para1");
   const contentPara2 = document.getElementById("content-para2");
@@ -73,7 +171,7 @@ function updateContent(lang) {
     contentPara1.textContent = translations[lang].content.paragraph1;
     contentPara2.textContent = translations[lang].content.paragraph2;
   }
-  // Обновляем музыкальную страницу (если есть)
+  // Музыкальная страница
   const musicPageTitle = document.getElementById("music-page-title");
   if (musicPageTitle) {
     musicPageTitle.textContent = translations[lang].musicPage.title;
@@ -86,7 +184,7 @@ function updateContent(lang) {
       }
     }
   }
-  // Обновляем страницу контактов (если есть)
+  // Страница контактов
   const contactsPageTitle = document.getElementById("contacts-page-title");
   if (contactsPageTitle) {
     contactsPageTitle.textContent = translations[lang].contactsPage.title;
@@ -109,7 +207,7 @@ function updateContent(lang) {
   if (formSubmitButton) { formSubmitButton.textContent = translations[lang].contactsPage.formButton; }
   const socialTitle = document.getElementById("social-title");
   if (socialTitle) { socialTitle.textContent = translations[lang].contactsPage.socialTitle; }
-  // Обновляем футер
+  // Footer
   const footerText = document.getElementById("footer-text");
   if (footerText) { footerText.innerHTML = translations[lang].footer.text; }
 }
@@ -126,9 +224,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // SVG-иконки для кнопок плеера
-  const playIconSVG = `<svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20"><polygon fill="#fff" points="5,3 17,10 5,17"/></svg>`;
-  const pauseIconSVG = `<svg class="icon pause-icon" width="20" height="20" viewBox="0 0 20 20"><rect x="4" y="3" width="4" height="14" fill="#fff"/><rect x="12" y="3" width="4" height="14" fill="#fff"/></svg>`;
+  // SVG иконки для плеера
+  const playIconSVG = `<svg class="icon play-icon" width="20" height="20" viewBox="0 0 20 20">
+    <polygon fill="#fff" points="5,3 17,10 5,17"/>
+  </svg>`;
+  const pauseIconSVG = `<svg class="icon pause-icon" width="20" height="20" viewBox="0 0 20 20">
+    <rect x="4" y="3" width="4" height="14" fill="#fff"/>
+    <rect x="12" y="3" width="4" height="14" fill="#fff"/>
+  </svg>`;
   
   // Инициализация кастомных аудиоплееров (только на странице music.html)
   document.querySelectorAll(".custom-audio").forEach(customAudio => {
@@ -144,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (audio.paused) {
         audio.play();
         playButton.innerHTML = pauseIconSVG;
-        showFloatingWidget(); // Показываем виджет при начале воспроизведения
+        showFloatingWidget(); // Показываем виджет при воспроизведении
       } else {
         audio.pause();
         playButton.innerHTML = playIconSVG;
